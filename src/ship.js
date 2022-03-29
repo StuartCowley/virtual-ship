@@ -24,6 +24,7 @@ function Ship(name) {
   this.yearsInService = initYearsInService;
   this.fuel = initFuel;
   this.morale = initMorale;
+  this.shuttles = [];
 }
 
 Ship.prototype = {
@@ -87,4 +88,10 @@ Ship.prototype.shipStatus = function () {
     return "All systems nominal!";
   }
 };
+
+Ship.prototype.buildShuttle = function (shuttleNumber) {
+  const shuttle = new Ship(shuttleNumber);
+  this.shuttles.push(shuttle);
+};
+
 module.exports = Ship;

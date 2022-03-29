@@ -123,3 +123,14 @@ describe("shipStatus", () => {
     expect(ship.shipStatus()).toBe("All systems nominal!");
   });
 });
+
+describe("buildShuttle", () => {
+  it("Builds a shuttle and places into shuttles array", () => {
+    const builder = new Ship("Dave");
+
+    builder.buildShuttle("001");
+    expect(builder.shuttles).toEqual([
+      { name: "001", yearsInService: 0, fuel: 20, morale: 8, shuttles: [] },
+    ]);
+  });
+});
